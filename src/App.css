@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #4EDFD8;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100vh - 60px);
+  padding: 0 20px;
+}
+
+/* Left Section */
+.left-section {
+  max-width: 50%;
+  text-align: center;
+  margin: auto;
+}
+
+.left-section h1 {
+  font-size: 36px;
+  color: #4a4a4a;
+  margin-top: 60px;
+}
+
+.left-section p {
+  font-size: 18px;
+  color: #4a4a4a;
+}
+
+/* Right Section */
+.right-section {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.right-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.right-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #4a4a4a;
+}
+
+.right-section input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.right-section input:focus {
+  border-color: #4EDFD8;
+  box-shadow: 0 0 5px rgba(78, 223, 216, 0.5);
+  outline: none;
+}
+
+.right-section button {
+  width: 100%;
+  padding: 15px;
+  background-color: #4a4a4a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.right-section button:hover {
+  background-color: #333;
+  transform: translateY(-3px);
+}
+
+/* for mobile view */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    padding: 20px;
+  }
+
+  .left-section {
+    max-width: 100%;
+    margin-bottom: 40px;
+    padding: 0 10px;
+  }
+
+  .right-section {
+    width: 90%;
+    padding: 20px;
+    margin: auto;
+  }
+
+  .right-section input,
+  .right-section button {
+    padding: 10px;
+  }
+}
+
+/* Shake Animation */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20%, 60% {
+    transform: translateX(-10px);
+  }
+  40%, 80% {
+    transform: translateX(10px);
+  }
+}
+
+.invalid {
+  background-color: #ff4d4d !important;
+  animation: shake 0.5s ease;
+  border: 1px solid #ff0000;
+}
