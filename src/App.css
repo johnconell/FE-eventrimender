@@ -1,118 +1,144 @@
+/* General body styling */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #4EDFD8;
+  margin: 0; /* Remove default margin */
+  font-family: Arial, sans-serif; /* Set a clean, modern font */
+  background-color: #4EDFD8; /* Soothing teal background */
+  transition: background-color 0.3s ease; /* Smooth transition for background color changes */
 }
 
+body:hover {
+  background-color: #3FCFC8; /* Slightly darker shade on hover for subtle interactivity */
+}
+
+/* Main container */
 .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: calc(100vh - 60px);
-  padding: 0 20px;
+  display: flex; /* Align sections side by side */
+  justify-content: space-between; /* Space sections evenly */
+  align-items: center; /* Center sections vertically */
+  height: calc(100vh - 60px); /* Full viewport height minus padding */
+  padding: 0 20px; /* Add horizontal padding */
+  transition: transform 0.3s ease; /* Smooth resizing for future effects */
 }
 
-/* Left Section */
+/* ----- Left Section Styling ----- */
 .left-section {
-  max-width: 50%;
-  text-align: center;
-  margin: auto;
+  max-width: 50%; /* Limit width to half */
+  text-align: center; /* Center-align text */
+  margin: auto; /* Center the section vertically */
 }
 
 .left-section h1 {
-  font-size: 36px;
-  color: #4a4a4a;
-  margin-top: 60px;
+  font-size: 36px; /* Large heading */
+  color: #4a4a4a; /* Neutral text color */
+  margin-top: 60px; /* Space above */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+  transition: transform 0.3s ease; /* Add scaling effect */
+}
+
+.left-section h1:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  color: #333; /* Change text color for better focus */
 }
 
 .left-section p {
-  font-size: 18px;
-  color: #4a4a4a;
+  font-size: 18px; /* Normal text size */
+  color: #4a4a4a; /* Neutral color */
+  transition: color 0.3s ease; /* Smooth color transition */
 }
 
-/* Right Section */
+.left-section p:hover {
+  color: #333; /* Slightly darker color for interactivity */
+}
+
+/* ----- Right Section Styling ----- */
 .right-section {
-  background-color: #fff;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 400px;
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff; /* Clean white background */
+  padding: 40px; /* Add spacing */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 400px; /* Fixed width */
+  position: relative; /* Needed for transformations */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
 }
 
 .right-section:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px) scale(1.02); /* Lift and enlarge on hover */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
 
-.right-section h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #4a4a4a;
-}
-
+/* Form inputs styling */
 .right-section input {
-  width: 100%;
-  padding: 15px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  box-sizing: border-box;
+  width: 100%; /* Full width */
+  padding: 15px; /* Add spacing */
+  margin-bottom: 15px; /* Space between inputs */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px; /* Rounded edges */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth focus effects */
+  box-sizing: border-box; /* Include border/padding in width */
 }
 
+/* Highlight input field on focus */
 .right-section input:focus {
-  border-color: #4EDFD8;
-  box-shadow: 0 0 5px rgba(78, 223, 216, 0.5);
-  outline: none;
+  border-color: #4EDFD8; /* Themed color border */
+  box-shadow: 0 0 8px rgba(78, 223, 216, 0.6); /* Glowing effect */
+  outline: none; /* Remove default outline */
 }
 
+/* Add shaking effect on invalid input */
+.invalid {
+  background-color: #ff4d4d !important; /* Bright red background for invalid state */
+  animation: shake 0.5s ease; /* Shake animation for feedback */
+  border: 1px solid #ff0000; /* Red border for emphasis */
+}
+
+/* Button styling */
 .right-section button {
-  width: 100%;
-  padding: 15px;
-  background-color: #4a4a4a;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%; /* Full width button */
+  padding: 15px; /* Add padding */
+  background-color: #4a4a4a; /* Neutral gray */
+  color: #fff; /* White text for contrast */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded edges */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
 }
 
+/* Hover effect for button */
 .right-section button:hover {
-  background-color: #333;
-  transform: translateY(-3px);
+  background-color: #333; /* Darker shade */
+  transform: translateY(-3px) scale(1.02); /* Lift and slightly enlarge */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Add shadow */
 }
 
-/* for mobile view */
+/* ----- Responsive Design for Mobile ----- */
 @media (max-width: 768px) {
   .container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    height: auto;
-    padding: 20px;
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center align items */
+    text-align: center; /* Center text */
+    height: auto; /* Adjust height */
+    padding: 20px; /* Add spacing */
   }
 
   .left-section {
-    max-width: 100%;
-    margin-bottom: 40px;
-    padding: 0 10px;
+    max-width: 100%; /* Use full width */
+    margin-bottom: 40px; /* Add spacing below */
+    padding: 0 10px; /* Add padding */
   }
 
   .right-section {
-    width: 90%;
-    padding: 20px;
-    margin: auto;
+    width: 90%; /* Make form almost full-width */
+    padding: 20px; /* Adjust padding */
+    margin: auto; /* Center section */
   }
 
   .right-section input,
   .right-section button {
-    padding: 10px;
+    padding: 10px; /* Reduce padding for smaller screens */
   }
 }
 
-/* Shake Animation */
+/* Shake Animation for Invalid Input */
 @keyframes shake {
   0%, 100% {
     transform: translateX(0);
@@ -123,10 +149,4 @@ body {
   40%, 80% {
     transform: translateX(10px);
   }
-}
-
-.invalid {
-  background-color: #ff4d4d !important;
-  animation: shake 0.5s ease;
-  border: 1px solid #ff0000;
 }
