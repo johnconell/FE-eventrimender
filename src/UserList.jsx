@@ -26,8 +26,26 @@ const UserList = () => {
     };
 
     return (
-        <Container>
-            <Paper>
+        <Container 
+            maxWidth="md" 
+            sx={{ 
+                display: 'flex', 
+                flexDirection: 'column', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                minHeight: '100vh',
+                gap: 2
+            }}
+        >
+            <Paper 
+                sx={{
+                    width: '100%',
+                    maxWidth: 600, // Limit the width of the table
+                    marginBottom: 2,
+                    padding: 2,
+                    overflowX: 'auto',
+                }}
+            >
                 <Table>
                     <TableHead>
                         <TableRow>
@@ -52,13 +70,10 @@ const UserList = () => {
                 page={currentPage} 
                 onChange={handlePageChange} 
                 color="primary" 
-                style={{ marginTop: '20px', display: 'flex', justifyContent: 'center' }}
+                sx={{ display: 'flex', justifyContent: 'center' }}
             />
         </Container>
     );
 };
 
 export default UserList;
-
-
-
